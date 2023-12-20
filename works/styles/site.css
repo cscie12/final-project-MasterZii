@@ -1,0 +1,83 @@
+/* made some modification as needed from the PhotoSwype example, some inclue color changes, sizing changes, marging/padding changes, etc. Otherwise I loved the overall default look!*/
+
+body {
+    margin-left: 5%;
+    margin-top: 2em;
+    margin-right: 5%;
+    background-color: #151515;
+    font-family: Calibri,Arial,sans-serif;
+    min-height: 100vh;
+    text-align: center;
+}
+
+h1 
+{
+    font-family: Calibri,Arial, sans-serif;
+    color: white;
+    border-bottom: none;
+}
+
+ul.gallery 
+{
+    list-style: none;
+    padding: 0;
+    margin: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    ul.gallery li 
+    {
+        margin-top: 1em;
+        font-size: 1.25em;
+        height: 300px;
+        text-align: center;
+        border: thin solid #ff009c;
+        margin: 10px;
+        padding: 5px;
+        flex-basis: 220px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-bottom: 50px;
+    }
+
+        ul.gallery li img 
+        {
+            border: none;
+        }
+
+footer 
+{
+    margin-top: 1rem;
+    padding: 1em;
+    font-size: smaller;
+    color: white;
+}
+
+a:link, a:visited 
+{
+    text-decoration: none;
+    color: ff009c;
+}
+
+a:hover 
+{
+    text-decoration: underline;
+}
+
+a:active 
+{
+    border: none;
+    text-decoration: none;
+}
+
+p {
+    color: white;
+
+}
+
+li
+{
+    color: white;
+    margin-top: 2rem;
+}

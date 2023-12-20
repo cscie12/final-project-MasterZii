@@ -1,0 +1,68 @@
+/* I like this simple but pretty font, thanks Google */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+body, html {
+    overflow: hidden; /* Hiding the scrollbar and disabling any scrolling */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: darkslategrey;
+    color: lightpink;
+    cursor: none; /* Gonna play around with a custom one on this page */
+    font-family: 'Outfit', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+
+button {
+    margin: 20px;
+    padding: 15px 30px; 
+    font-size: 30px; /* Adjusting the font size for readability */
+    cursor: none; /* We do not want default cursors here */
+    background-color: darkcyan; /* Modern, sleek color but also ugly by itself imho*/
+    color: lightpink; /* Contrasting color for the text */
+    border: 2px solid transparent; /* Transparent border so it deoesn't mess with shifting */
+    border-radius: 10px; /* Rounded corners because "modern"*/
+    font-family: 'Outfit', sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adding a shadow for depth perception*/
+    transition: all 0.2s; /* Smooth transition for the buttons hover effects */
+}
+
+    button:hover {
+        background-color: #376c6f; /* Slightly darker shade on hover */
+        box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3); /* Larger shadow on cursor hover */
+        border: 2px dotted lightpink; /* Dotted border on hover */
+    }
+
+
+
+.cursor-trail {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: lightpink; /* A light pink for better visibility */
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    z-index: 1000; /* So we can actually see it on the page */
+    opacity: .5; /* 50% opacity for the trail elements so they're not as distracting*/
+
+    /* Let's make it more cursor shaped instead of round */
+    clip-path: polygon(20% 0%, 20% 100%, 100% 100%);
+}
+
+.cursor-original {
+    opacity: 1; /* Full opacity here */
+    z-index: 2000; /* Higher than the rest of the trail elements */
+}
+

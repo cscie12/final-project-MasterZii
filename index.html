@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Portfolio</title>
+    <link rel="stylesheet" href="site.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Where would you like to go?</h1>
+        <div class="button-container">
+            <button onclick="location.href='profile/index.html'">Profile</button>
+            <button onclick="location.href='works/index.html'">Portfolio</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const trailElements = [];
+            for (let i = 0; i < 10; i++) {
+                const trail = document.createElement("div");
+                trail.classList.add("cursor-trail");
+                trail.style.left = '-50px'; // Initial position to be off-screen so it doesn't look weird after refresh
+                trail.style.top = '-50px';  
+                if (i === 0) { // The first element is the original cursor that moves first
+                    trail.classList.add("cursor-original");
+                }
+                document.body.appendChild(trail);
+                trailElements.push(trail);
+            }
+
+            document.addEventListener("mousemove", function (e) {
+                let x = e.pageX;
+                let y = e.pageY;
+
+                trailElements.forEach((trail, index) => {
+                    setTimeout(() => {
+                        trail.style.left = x + 'px';
+                        trail.style.top = y + 'px';
+                    }, index * 50);
+                });
+            });
+
+            // Change cursor color on button hover to a darker and more transparent pink
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach(button => {
+                button.addEventListener("mouseover", () => {
+                    trailElements.forEach(trail => trail.style.backgroundColor = "#be0040");
+                });
+                button.addEventListener("mouseout", () => {
+                    trailElements.forEach(trail => trail.style.backgroundColor = "lightpink");
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
